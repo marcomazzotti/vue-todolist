@@ -3,3 +3,50 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header{
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+}
+
+header img{
+  height: 60px;
+}
+
+.wrapper{
+  width: 60%;
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.new-todo{
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.todo-list{
+  list-style: none;
+  border: 1px solid green;
+  padding: 0 1rem 1.5rem 1rem;
+}
+
+.todo-list li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid green;
+}
+
+.delete{
+  color: red;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.error{
+  color: red;
+  margin-bottom: 1rem;
+}

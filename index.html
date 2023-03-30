@@ -5,12 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="css/style.css">
   <title>ToDo List</title>
 </head>
 <body>
 
 <div id="app">
 
+  <header>
+    <img src="img/logo.png" alt="">
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <h1>TODO LIST</h1>
+
+      <div class="new-todo">
+        <p class="error" v-show="error">Todo non può essere vuoto!</p>
+        <input type="text" placeholder="Aggiungi un nuovo todo" v-model="newTodo" @keyup.enter="addTodo"/>
+        <button @click="addTodo">Aggiungi</button>
+      </div>
+
+      <ul class="todo-list" v-if="todos.length > 0">
+        <li v-for="(element, index) in todos">
+            <p :style="[element.done === false ? {'text-decoration':'none'} : {'text-decoration':'line-through'}]">{{ element.todo }}</p>
+            <span class="delete" @click="deleteTodo(index)">&cross;</span>
+        </li>
+      </ul>
+    </div>
+  </main>
 </div>
   
 <script src="js/script.js"></script>
